@@ -39,23 +39,23 @@ public class Main {
 				
 			}
 			float sum =0;
-			long time =0;
+			float time =0;
 			for (Caller call:calls)
 			{
 				System.out.println(call.getTimeFinish().getTime());
 				System.out.println(call.getTimeStart().getTime());
 				System.out.println("Time: "+TimeUnit.MILLISECONDS.toMinutes(call.getTimeFinish().getTime()-call.getTimeStart().getTime()));
 				time =TimeUnit.MILLISECONDS.toMinutes(call.getTimeFinish().getTime()-call.getTimeStart().getTime());
-				if (time>5)
+				if (time<5)
 				{
-					System.out.println("entrou >5");
-					sum =(float) (sum + (time*0.05));
+					System.out.println("entrou <5");
+					sum =sum + (time*0.05f);
 					System.out.println(sum);
 					
 				}else
 				{
-					System.out.println("entrou <5");
-					sum = (float) (sum + (time*0.02));
+					System.out.println("entrou >5");
+					sum =  sum + (time*0.02f);
 					System.out.println(sum);	
 				}
 				System.out.println(call.getCallFrom());
