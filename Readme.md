@@ -8,7 +8,7 @@ It is also up to you whether there's any need for documentation (or anything els
 
 ## Exercise
 
-Given a list of calls with the following format:
+Given a list of calls with the following format:    
 
     time_of_start;time_of_finish;call_from;call_to
 

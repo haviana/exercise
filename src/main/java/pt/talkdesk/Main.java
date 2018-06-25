@@ -40,12 +40,19 @@ public class Main {
 			}
 			float sum =0;
 			float time =0;
+			float maxTime=0f;
+			Caller caller = null;
 			for (Caller call:calls)
 			{
 				System.out.println(call.getTimeFinish().getTime());
 				System.out.println(call.getTimeStart().getTime());
 				System.out.println("Time: "+TimeUnit.MILLISECONDS.toMinutes(call.getTimeFinish().getTime()-call.getTimeStart().getTime()));
 				time =TimeUnit.MILLISECONDS.toMinutes(call.getTimeFinish().getTime()-call.getTimeStart().getTime());
+				if (maxTime<time)
+				{
+					maxTime=time;
+					caller = call;
+				}
 				if (time<5)
 				{
 					System.out.println("entrou <5");
@@ -55,13 +62,16 @@ public class Main {
 				}else
 				{
 					System.out.println("entrou >5");
-					sum =  sum + (time*0.02f);
+					sum =  sum + ((5)*0.05f);
+					sum =  sum + ((time-5)*0.02f);
 					System.out.println(sum);	
 				}
 				System.out.println(call.getCallFrom());
 				System.out.println(call.getCallTo());
 			}
 			System.out.println("Sum: "+sum);
+			System.out.println("MaxTime: "+maxTime);
+			System.out.println("CallFrom: "+caller.getCallFrom());
 			
 			
 		} catch (FileNotFoundException e) {
