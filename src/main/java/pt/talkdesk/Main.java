@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.StringTokenizer;
+import java.util.concurrent.TimeUnit;
 
 import pt.talkdesk.call.Caller;
 
@@ -37,14 +38,31 @@ public class Main {
 				line = br.readLine();
 				
 			}
-			
+			float sum =0;
+			long time =0;
 			for (Caller call:calls)
 			{
-				System.out.println(call.getTimeFinish());
-				System.out.println(call.getTimeStart());
-				System.out.println(call.getCallTo());
+				System.out.println(call.getTimeFinish().getTime());
+				System.out.println(call.getTimeStart().getTime());
+				System.out.println("Time: "+TimeUnit.MILLISECONDS.toMinutes(call.getTimeFinish().getTime()-call.getTimeStart().getTime()));
+				time =TimeUnit.MILLISECONDS.toMinutes(call.getTimeFinish().getTime()-call.getTimeStart().getTime());
+				if (time>5)
+				{
+					System.out.println("entrou >5");
+					sum =(float) (sum + (time*0.05));
+					System.out.println(sum);
+					
+				}else
+				{
+					System.out.println("entrou <5");
+					sum = (float) (sum + (time*0.02));
+					System.out.println(sum);	
+				}
+				System.out.println(call.getCallFrom());
 				System.out.println(call.getCallTo());
 			}
+			System.out.println("Sum: "+sum);
+			
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
