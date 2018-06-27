@@ -48,13 +48,11 @@ public class FileProcessor {
 	public List<Caller> createListOfCallers() {
 
 		String line = null;
-		System.out.println("Reading the filename " + file.getName() + "....");
 		List<Caller> calls = new ArrayList<Caller>();
 		try {
 			line = br.readLine();
 
 			while (line != null) {
-				System.out.println(line);
 				StringTokenizer sT = new StringTokenizer(line, ";");
 				Date date1 = new SimpleDateFormat("hh:mm:ss").parse(sT.nextToken());
 				Date date2 = new SimpleDateFormat("hh:mm:ss").parse(sT.nextToken());
@@ -64,11 +62,9 @@ public class FileProcessor {
 
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Problems reading file");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Date format problems");
 		}
 
 		return calls;

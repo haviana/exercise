@@ -48,8 +48,7 @@ public class Calls {
 			}
 		}
 		calls =aux;
-		System.out.println("MaxTime: "+maxTime);
-	}	
+	}
 	
 	public void setCallsTime() {
 		for (Caller call:calls)
@@ -63,13 +62,6 @@ public class Calls {
 			}
 			
 		}
-//		 Set set2 = timeCalls.entrySet();
-//	      Iterator iterator2 = set2.iterator();
-//	      while(iterator2.hasNext()) {
-//	          Map.Entry mentry2 = (Map.Entry)iterator2.next();
-//	          System.out.print("Key is: "+mentry2.getKey() + " & Value is: ");
-//	          System.out.println(mentry2.getValue());
-//	       }
 	}
 	
 	
