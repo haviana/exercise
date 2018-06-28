@@ -20,17 +20,22 @@ public class Main {
 
 		float sum = 0;
 		float time = 0;
+		
+		/*
+		 * Calculation of the total of the day
+		 * 
+		 * */
 		for (Caller call : calls.getCalls()) {
 			time = call.getCallerTimer();
 			if (time < 5) {
-				sum = sum + (time * 0.05f);
+				sum = sum + (time * 0.05f); //Less than 5 minutes call
 
 			} else {
-				sum = sum + ((5) * 0.05f);
-				sum = sum + ((time - 5) * 0.02f);
+				sum = sum + ((5) * 0.05f); //The first 5 minutes
+				sum = sum + ((time - 5) * 0.02f); //The remaining
 			}
 		}
 		
-		System.out.println("Sum: " + sum);
+		System.out.println(sum);
 	}
 }

@@ -2,10 +2,7 @@ package pt.talkdesk.call;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 
 
@@ -28,7 +25,10 @@ public class Calls {
 		this.calls = calls;
 	}
 
-	
+	/**
+	 * 
+	 * To exclude from the hashmap the caller who have call most
+	 */
 	public void removeMaxTime()
 	{
 		float maxTime=0f;

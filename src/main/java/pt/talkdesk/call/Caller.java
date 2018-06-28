@@ -3,6 +3,12 @@ package pt.talkdesk.call;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+
+/**
+ * 
+ * 
+ * Caller descriptor
+ * */
 public class Caller {
 
 	Date timeStart = null;
